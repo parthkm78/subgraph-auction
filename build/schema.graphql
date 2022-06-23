@@ -1,0 +1,37 @@
+type Bid @entity {
+  id: ID!
+  amount: BigInt
+  bidder: Bytes
+  createdAt: Int
+  auctionId : BigInt
+  endTime : BigInt
+} 
+
+type Auction @entity {
+  id: ID!
+  bidCount: BigInt
+  auctionId: BigInt # uint256 
+  creator: Bytes # address
+  createdAt: Int
+  updatedAt: Int
+  sellToken: Bytes
+  sellTokenId: BigInt
+  sellTokenValue: BigInt
+  minimalPrice: BigInt
+  data: Bytes
+  status:String
+  seller: Bytes
+  buyer: Bytes
+  protocolFee : BigInt #   // protocolFee at the time of the purchase
+  endTime : BigInt #// the time when auction ends
+  buyAsset : Bytes # // asset type that bids are taken in
+  minimalStepBasePoint : BigInt
+  logIndex : String
+  originFees : BigInt  
+  startTime : BigInt  
+  duration : BigInt  
+  buyoutPrice : BigInt  
+  auctionType : String
+}
+
+
